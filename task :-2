@@ -1,0 +1,15 @@
+CREATE TABLE EMPLOYEE (
+empId int,
+name varchar(15), 
+dept varchar(10), 
+age int, 
+salary int
+);
+INSERT INTO EMPLOYEE (empId, name, dept, age, salary)
+VALUES
+(001, 'RAM', 'SALES', 25, 20000),
+(002, 'MOHAN', 'ACCOUNTING', 27, 30000), 
+(003, 'PRIYA', 'CUSTOMERCARE', 22, 25000), 
+(004, 'RIYA', 'SALES', 23, 21000), 
+(005, 'KEVIN', 'ACCOUNTING', 29, 28500);
+SELECT * FROM EMPLOYEE;
