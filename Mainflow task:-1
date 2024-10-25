@@ -7,6 +7,7 @@ It holds information in structured format.
 Databases can store any type of data.
 structured query language is a database.
 It is used to store, update, modify, insert, delete, create, filter and execute in the database.
+
 SQL basics:
 literals: In sql literals have 4 types
 string -'hub','my prepared notes',", null
@@ -16,7 +17,9 @@ Boolean-true, false, null
 ''- Empty string and it has a value
 0- Number 0 has a numeric value of 0
 Null - It has no values 
+
 Comments: In Comments there are two types Single line comment- it starts with --comment.using this symbol before comment it cannot affect the program Multi line comment- it starts with /*comment*/.using this symbol front and end of the comment it cannot affect the program
+
 Data types: In Data types many types they have, for example:int, float, varchar(n), varchar, char, long,date, timesta mp etc..
 Syntax and Structure: CREATE, ALTER, DROP
 --Creating a table CREATE TABLE Students( ID INT PRIMARY KEY, Name VARCHAR2(30), Age INT, Email VARCHAR(255) );
