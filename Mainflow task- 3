@@ -1,0 +1,50 @@
+create table details(
+id int,
+name varchar(20),
+course_id int,
+department char(3),
+phone_no number
+);
+
+insert into details values(001,'abi',104,'CSE',9876549872);
+insert into details values(002,'baskar',105,'EEE',9896857421);
+insert into details values(003,'chandru',104,'CSE',9956874213);
+insert into details values(004,'sri',106,'ECE',9728956217);
+insert into details values(005,'hari',106,'ECE',9654987321);
+
+
+select*from details
+
+
+create table studies(
+course_id int,
+course_name varchar(6),
+staff_name varchar2(20)
+);
+
+
+insert into studies values(104,'STA','kumar');
+insert into studies values(105,'CN','devi');
+insert into studies values(107,'BEEE','raj');
+
+select*from studies
+
+
+
+SELECT c.name, c.department, o.course_id, o.course_name
+FROM details c
+RIGHT JOIN studies o ON c.course_id = o.course_id;
+
+
+SELECT c.name, c.department, o.course_id, o.course_name
+FROM details c
+LEFT JOIN studies o ON c.course_id = o.course_id;
+
+
+SELECT c.name, c.department, o.course_id, o.course_name
+FROM details c
+FULL JOIN studies o ON c.course_id = o.course_id;
+
+SELECT c.name, c.department, o.course_id, o.course_name
+FROM details c
+INNER JOIN studies o ON c.course_id = o.course_id;
