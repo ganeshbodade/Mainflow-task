@@ -1,0 +1,51 @@
+CREATE TABLE Dept (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50) NOT NULL
+);
+INSERT INTO Dept 
+VALUES (101, 'Sales');
+
+INSERT INTO Dept 
+VALUES (102, 'Marketing');
+
+INSERT INTO Dept 
+VALUES (103, 'Human Resources');
+
+SELECT * FROM DEPT;
+
+
+CREATE TABLE Company ( 
+EmployeeID INT PRIMARY KEY,
+FirstName VARCHAR(50) NOT NULL, 
+LastName VARCHAR(50) NOT NULL, 
+BirthDate DATE, 
+HireDate DATE DEFAULT SYSDATE, 
+Salary DECIMAL(10, 2) CHECK (Salary > 0),  
+DepartmentID INT,
+FOREIGN KEY (DepartmentID) REFERENCES Dept(DepartmentID) );
+
+INSERT INTO Company VALUES (1, 'John', 'Doe', '15-JUNE-1985', '10-JAN-2020', 75000.00, 101);
+
+INSERT INTO company VALUES (2, 'Jane', 'Smith', '19-SEP-1990', '15-MAR-2019', 82000.00, 102);
+
+INSERT INTO COMPANY VALUES (3, 'Emily', 'Johnson', '05-DEC-1988', '22-JUL-2022', 68000.00, 103);
+
+SELECT * FROM COMPANY;
+
+ALTER TABLE Company
+ADD email VARCHAR2(15);
+
+ALTER TABLE Company
+ADD CONSTRAINT unique_email UNIQUE (Email);
+
+UPDATE Company
+SET Email = 'sara@gmail.com'
+WHERE EmployeeID = 1;
+
+UPDATE Company
+SET Email = 'thara@gmail.com'
+WHERE EmployeeID = 2;
+
+UPDATE Company
+SET Email = 'maara@gmail.com'
+WHERE EmployeeID = 3;
