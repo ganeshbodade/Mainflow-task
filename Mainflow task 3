@@ -12,9 +12,7 @@ insert into details values(003,'chandru',104,'CSE',9956874213);
 insert into details values(004,'sri',106,'ECE',9728956217);
 insert into details values(005,'hari',106,'ECE',9654987321);
 
-
 select*from details
-
 
 create table studies(
 course_id int,
@@ -22,14 +20,11 @@ course_name varchar(6),
 staff_name varchar2(20)
 );
 
-
 insert into studies values(104,'STA','kumar');
 insert into studies values(105,'CN','devi');
 insert into studies values(107,'BEEE','raj');
 
 select*from studies
-
-
 
 SELECT c.name, c.department, o.course_id, o.course_name
 FROM details c
