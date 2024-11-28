@@ -1,0 +1,68 @@
+CREATE TABLE EMPLOYEE(
+Employee_id int PRIMARY KEY,
+Name varchar2(50),
+Department varchar2(10),
+salary decimal(10,2),
+DOB date,
+gender char(6) );
+INSERT INTO  EMPLOYEE VALUES (1,'ANTONY','HR',10000.00,'6-JUNE-1990','MALE');
+INSERT INTO EMPLOYEE VALUES(2,'RAJ','IT',12000.00,'13-MAR-1989','FEMALE');
+INSERT INTO  EMPLOYEE VALUES (3,'SRI','IT',12000.00,'21-MAY-1995','MALE');
+INSERT INTO  EMPLOYEE VALUES (4,'SHASHI','IT',11000.00,'15-DEC-1999','FEMALE');
+INSERT INTO  EMPLOYEE VALUES (5,'RAJI','MARKETING',13000.00,'19-JAN-1987','FEMALE');
+INSERT INTO  EMPLOYEE VALUES (6,'PANDI','MARKETING',13000.00,'3-MAR-1987','MALE');
+INSERT INTO  EMPLOYEE VALUES (7,'RAM','FINANCE',15000.00,'13-JUL-1990','MALE');
+INSERT INTO  EMPLOYEE VALUES (8,'SURAJ','FINANCE',15000.00,'25-APR-1990','MALE');
+INSERT INTO  EMPLOYEE VALUES (9,'BALA','IT',12000.00,'18-NOV-1997','MALE');
+INSERT INTO  EMPLOYEE VALUES (10,'PRIYA','IT',12000.00,'28-DEC-1989','FEMALE');
+INSERT INTO  EMPLOYEE VALUES (11,'MAHESH','HR',10000.00,'24-FEB-1996','MALE');
+select *from employee;
+
+1.Find the Second Highest Salary of Employee
+
+SELECT MAX(salary) AS SecondHighestSalary
+FROM employee
+WHERE salary < (SELECT MAX(salary) FROM employee);
+
+2. Find Max Salary from Each Department
+
+SELECT department, MAX(salary) AS MaxSalary
+FROM employee
+GROUP BY department;
+
+3. Display the Current Date
+
+SELECT TRUNC(SYSDATE) AS CurrentDate FROM dual;
+
+
+5. Print the Name of the Distinct Employee Whose DOB is Between 01/01/1975 to 31/12/1990
+
+SELECT DISTINCT NAME
+FROM employee
+WHERE dob BETWEEN '01-JAN-1975' AND '31-DEC-1990';
+
+6. Find the Number of Employees According to Gender Whose DOB is Between 01/JAN/75 TO 31/DEC/90
+
+SELECT gender, COUNT(*) AS NumberOfEmployees
+FROM employee
+WHERE dob BETWEEN '01-JAN-75' AND '31-DEC-90'
+GROUP BY gender;
+7. Find an Employee Whose Salary is Equal to or Greater Than 10000
+
+SELECT *FROM employee
+WHERE salary > 10000;
+
+8. Find the Name of an Employee Whose Name Starts with ‘M’
+
+SELECT *FROM employee
+WHERE name LIKE 'M%';
+
+9. Find All Employee Records Containing the Word "Joe", Regardless of Case
+
+SELECT *FROM employee
+WHERE NAME LIKE '%AJ%';
+
+10. Find the Year from Date
+
+SELECT DOB AS YEAR
+FROM employee;
